@@ -10,10 +10,14 @@ class App extends React.Component {
 
   // class 내부에서 함수를 추가하기
   add = () => {
-    console.log('Add!');
+    this.setState((current) => ({
+      count: current.count + 1,
+    }));
   };
   minus = () => {
-    console.log('Minus');
+    this.setState((current) => ({
+      count: current.count - 1,
+    }));
   };
 
   render() {
