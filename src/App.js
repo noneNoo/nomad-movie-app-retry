@@ -20,7 +20,9 @@ class App extends React.Component {
     }));
   };
 
+  // 컴포넌트를 render 하기
   render() {
+    console.log('start rendering...!');
     return (
       <div>
         <h1>The Number is ... {this.state.count}</h1>
@@ -28,6 +30,21 @@ class App extends React.Component {
         <button onClick={this.minus}>Minus</button>
       </div>
     );
+  }
+
+  // 컴포넌트 생성시 렌더링 된 후
+  componentDidMount() {
+    console.log('component rendered!');
+  }
+
+  // 컴포넌트 업데이트시 렌더링 된 후
+  componentDidUpdate() {
+    console.log('I just Updated!');
+  }
+
+  // 컴포넌트가 제거될 시
+  componentWillUnmount() {
+    console.log('byebye');
   }
 }
 
