@@ -29,17 +29,31 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <div>
+      <section className="container">
         {isLoading ? (
           <div className="loader">
             <span className="loader__text">Loading...</span>
           </div>
         ) : (
-          movies.map((item) => {
-            return <section class="container"></section>;
-          })
+          <div className="movies">
+            {movies.map((item) => {
+              {
+                console.log(item);
+              }
+              return (
+                <Movie
+                  key={item.id}
+                  id={item.id}
+                  year={item.year}
+                  title={item.title}
+                  summary={item.summary}
+                  poster={item.medium_cover_image}
+                />
+              );
+            })}
+          </div>
         )}
-      </div>
+      </section>
     );
   }
 }
