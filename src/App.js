@@ -2,6 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import Movie from './Movie';
+import './App.css';
 // import PropTypes from 'prop-types';
 
 class App extends React.Component {
@@ -37,9 +38,6 @@ class App extends React.Component {
         ) : (
           <div className="movies">
             {movies.map((item) => {
-              {
-                console.log(item);
-              }
               return (
                 <Movie
                   key={item.id}
@@ -48,6 +46,7 @@ class App extends React.Component {
                   title={item.title}
                   summary={item.summary}
                   poster={item.medium_cover_image}
+                  genres={item.genres}
                 />
               );
             })}
